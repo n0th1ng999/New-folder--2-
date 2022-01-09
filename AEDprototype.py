@@ -128,7 +128,22 @@ def register():
         NicknameRegister=input("\nPerfil_utilizador (Nickname):")
 
         #Verificação de parametros(Regras pra cada 1 + verificação de existencia na "base de dados")
-        
+        if len(NameRegister)<=3 :
+            print("\n\nNome que registou é demasiado pequeno")
+            
+            
+        if  NameRegister.find("@")==-1 or NameRegister.find(".")==-1:
+            print("\n\nO email que registou não é válido")
+            
+
+        if  len(PasswordRegister)<=5: #or PasswordRegister.find("1")==-1 or NameRegister.find(".")==-1:
+            print("\n\nA Password que registou não é válida")
+              
+
+        if len(NameRegister)<=3:
+            print("\n\nO Nickname que registou não é válido")
+                   
+       
 
         #Se a verificação for bem sucedida:
 
