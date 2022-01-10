@@ -42,7 +42,7 @@
 #
 #
 #
-#                *     Gerir Catalogo:                                                                                    *
+#                *     ❖GERIR CATÁLOGO:                                                                                    *
 #                            Adicionar ou remover cursos/conteúdos de aprendizagem ao catálogo.
 #                              Um curso/conteúdo de aprendizagem é constituído por uma sequência própria de objetos
 #                           de aprendizagem (normalmente vídeos).
@@ -50,9 +50,9 @@
 #                           (é opcional) e pode ter um conjunto (variável) de vídeos associados. Isto é, um curso pode
 #                           ser constituído por uma sequência de conteúdos. Cada conteúdo é identificado por uma
 #                           descrição e o respetivo link (normalmente vídeo do Youtube)
-#                *                                                                                                        *
+#                                                                                                                        
 #
-#                *      ❖PESQUISA NO CATÁLOGO
+#                       ❖PESQUISA NO CATÁLOGO
 #                         A aplicação deve apresentar o catálogo ao utilizador (por omissão os cursos mais recentes).
 #                         O utilizador poderá filtrar o catálogo por categoria(s), ou por um determinado título de
 #                         curso/conteúdo de aprendizagem.
@@ -120,34 +120,20 @@ def MenuPreEntry():
 #                 --->      o --  Formato: nome; email; password; perfil_utilizador  --
 def register():
     
-    Error = True
-    while Error == True:
+    Error = False
+    while Error == False:
         NameRegister=input("\nNome:")
         EmailRegister=input("\nEmail:")
         PasswordRegister=input("\nPassword:")
         NicknameRegister=input("\nPerfil_utilizador (Nickname):")
 
-        #Verificação de parametros(Regras pra cada 1 + verificação de existencia na "base de dados")
-        if len(NameRegister)<=3 :
-            print("\n\nNome que registou é demasiado pequeno")
-            
-            
-        if  NameRegister.find("@")==-1 or NameRegister.find(".")==-1:
-            print("\n\nO email que registou não é válido")
-            
-
-        if  len(PasswordRegister)<=5: #or PasswordRegister.find("1")==-1 or NameRegister.find(".")==-1:
-            print("\n\nA Password que registou não é válida")
-              
-
-        if len(NameRegister)<=3:
-            print("\n\nO Nickname que registou não é válido")
+        
                    
        
 
         #Se a verificação for bem sucedida:
-
-        Account=str(NameRegister+";"+EmailRegister+";"+PasswordRegister+";"+NicknameRegister)
+    
+        Account=str(NameRegister+";"+EmailRegister+";"+PasswordRegister+";"+NicknameRegister+"\n")
 
         try:
             LoginInfoFile = open("LoginInfo.txt" , "x" )
@@ -156,11 +142,57 @@ def register():
         except:
             LoginInfoFile = open("LoginInfo.txt" , "r+" , encoding="utf-8")
         
-        LoginInfoFile.write(Account)
+        #Fazer check de email e nickname
+        for line in LoginInfoFile:
+            Info = line.split(";") 
+            if Info[1] == EmailRegister:
+                print("\n\Já existe uma conta com esse Nickname")
+                Error=False
+                break
+            else:
+                Error=True
+
+            if Info[3] == NicknameRegister:
+                print("\n\Já existe uma conta com esse Nickname")
+                Error=False
+                break
+            else:
+                Error=True
+
+        if Error:
+            LoginInfoFile.write(Account)
+        else:
+            print("\nConta com esse nome/email já existe existe")
+
+
+
+
+
+
+        #Verificação de parametros(Regras pra cada 1 + verificação de existencia na "base de dados")
+        if len(NameRegister)<=3 :
+            print("\n\nNome que registou é demasiado pequeno")
+            
+            
+        if  EmailRegister.find("@")==-1 or EmailRegister.find(".")==-1:
+            print("\n\nO email que registou não é válido")
+            
+
+        if  len(PasswordRegister)<=5: #or PasswordRegister.find("1")==-1 or NameRegister.find(".")==-1:
+            print("\n\nA Password que registou não é válida")
+              
+
+        if len(NicknameRegister)<=3:
+            print("\n\nO Nickname que registou não é válido")
+
         
 
-
         LoginInfoFile.close()
+
+
+def login():
+    return
+
 
 register()
 
