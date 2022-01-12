@@ -96,6 +96,8 @@ import tkinter
 import math
 import random
 
+
+
 def clear():
     os.system("cls")
 
@@ -125,7 +127,7 @@ def register():
         NameRegister=input("\nNome:")
         EmailRegister=input("\nEmail:")
         PasswordRegister=input("\nPassword:")
-        NicknameRegister=input("\nPerfil_utilizador (Nickname):")
+        UsernameRegister=input("\nPerfil_utilizador (Username):")
 
         
                    
@@ -133,7 +135,7 @@ def register():
 
         #Se a verificação for bem sucedida:
     
-        Account=str(NameRegister+";"+EmailRegister+";"+PasswordRegister+";"+NicknameRegister+"\n")
+        Account=str(NameRegister+";"+EmailRegister+";"+PasswordRegister+";"+UsernameRegister+"\n")
 
         try:
             LoginInfoFile = open("LoginInfo.txt" , "x" )
@@ -146,14 +148,14 @@ def register():
         for line in LoginInfoFile:
             Info = line.split(";") 
             if Info[1] == EmailRegister:
-                print("\n\Já existe uma conta com esse Nickname")
+                print("\n\Já existe uma conta com esse Username")
                 Error=False
                 break
             else:
                 Error=True
 
-            if Info[3] == NicknameRegister:
-                print("\n\Já existe uma conta com esse Nickname")
+            if Info[3] == UsernameRegister:
+                print("\n\Já existe uma conta com esse Username")
                 Error=False
                 break
             else:
@@ -170,20 +172,20 @@ def register():
 
 
         #Verificação de parametros(Regras pra cada 1 + verificação de existencia na "base de dados")
-        if len(NameRegister)<=3 :
-            print("\n\nNome que registou é demasiado pequeno")
+        #if len(NameRegister)<=3 :
+        #     print("\n\nNome que registou é demasiado pequeno")
             
             
-        if  EmailRegister.find("@")==-1 or EmailRegister.find(".")==-1:
-            print("\n\nO email que registou não é válido")
+        # if  EmailRegister.find("@")==-1 or EmailRegister.find(".")==-1:
+        #     print("\n\nO email que registou não é válido")
             
 
-        if  len(PasswordRegister)<=5: #or PasswordRegister.find("1")==-1 or NameRegister.find(".")==-1:
-            print("\n\nA Password que registou não é válida")
+        # if  len(PasswordRegister)<=5: #or PasswordRegister.find("1")==-1 or NameRegister.find(".")==-1:
+        #     print("\n\nA Password que registou não é válida")
               
 
-        if len(NicknameRegister)<=3:
-            print("\n\nO Nickname que registou não é válido")
+        # if len(UsernameRegister)<=3:
+        #     print("\n\nO Username que registou não é válido")
 
         
 
@@ -191,7 +193,29 @@ def register():
 
 
 def login():
-    return
+    print("\n\n\t\tLogin . . . ")
+    LoginUsername=input("\n\nUsername:")
+    LoginPassword=input("\n\nPassword:")
+
+
+    #abrir ficheiro infoLogin
+    LoginInfoFile=open("LoginInfo.txt", "r")
+
+
+    
+    # --> Nome;mail@example.com;Password;Username  <--
+    
+    for line in LoginInfoFile:
+            Info = line.split(";") 
+            if Info[3] == LoginUsername and Info[2] == LoginPassword:
+                print("\n \nA logar . . .")
+            else:
+                print("\n\n\t\tLogin . . . ")
+                LoginUsername=input("\n\nUsername:")
+                LoginPassword=input("\n\nPassword:")
+
+    LoginInfoFile.close
+    
 
 
 register()
