@@ -63,16 +63,21 @@ def loginValidation():
     usernameEntry1.delete(0,END)
     passwordEntry1.delete(0,END)
 
-    users = os.listdir()
-    if username1 in users:
-        file1 = open(username1, "r")
-        validation = file1.read().splitlines()
-        if password1 in validation:
-            print("Login was sucessfull")
-        else:
-            print("The password you entered is not valid!")
-    else:
-        print("User not found")
+    #List_of_files = os.listdir()
+
+    file1 = open("utilizadores.txt", "r") 
+    validation = file1.readlines()
+    file1.close()
+    for user in validation:
+        Fields = user.split(";")
+        if username1 == Fields[0]:
+            if password1 == Fields[1]:
+                print("Login  sucessfull")
+                return
+            else:
+                print("The password you entered is not valid!")
+    
+    print("User not found")
     
 
 def login():
