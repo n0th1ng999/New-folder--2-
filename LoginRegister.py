@@ -33,6 +33,7 @@ def validateReg():
         emailRegValidate= email.get()
         nickRegValidate = nickname.get()
         validForm = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+        
         if len(userRegValidate) < 4:
             messagebox.showerror("Invalid Username!", "Username needs to be at least 4 characters long!")
             break
@@ -51,16 +52,12 @@ def validateReg():
             
         else:
             messagebox.showerror("Invalid E-Mail", "Your E-Mail must include the characters '@' and '.'")
-            break
-            
         
+    
+    
         
-        
- 
 
-
-
-
+                                
 
 def register():
     global screen1
@@ -86,7 +83,7 @@ def register():
     usernameEntry = Entry(screen1,textvariable = username)
     usernameEntry.pack()
     Label(screen1,text="Password *(Min 6 char)").pack()
-    passwordEntry = Entry(screen1,textvariable = password)
+    passwordEntry = Entry(screen1,textvariable = password, show = "*")
     passwordEntry.pack()
     Label(screen1,text="E-mail *(Must include '@' and '.')").pack()
     emailEntry = Entry(screen1,textvariable = email)
@@ -135,9 +132,9 @@ def loginValidation():
     #List_of_files = os.listdir()
 
     file1 = open("utilizadores.txt", "r") 
-    validation = file1.readlines()
+    loginValidation = file1.readlines()
     file1.close()
-    for user in validation:
+    for user in loginValidation:
         Fields = user.split(";")
         if username1 == Fields[0]:
             if password1 == Fields[1]:
@@ -200,7 +197,7 @@ def login():
     usernameEntry1.pack()
     Label(screen2,text = "").pack()
     Label(screen2,text = "Password").pack()
-    passwordEntry1 = Entry(screen2, textvariable = passwordValidation)
+    passwordEntry1 = Entry(screen2, textvariable = passwordValidation,show = "*")
     passwordEntry1.pack()
     Label(screen2,text = "").pack()
     Button(screen2, text = "Login", width = 10, height = 1,command = loginValidation).pack()
