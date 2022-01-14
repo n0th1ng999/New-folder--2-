@@ -1,6 +1,10 @@
 from tkinter import *
-import os
 from tkinter import messagebox
+import tkinter as tk
+import re
+import os
+
+
 def register_user():
     usernameInfo = username.get()
     passwordInfo = password.get()
@@ -8,17 +12,53 @@ def register_user():
     nicknameInfo = nickname.get()
     
 
-    file = open("utilizadores.txt","w")
+    file = open("utilizadores.txt","a")
     file.write(usernameInfo+";")
     file.write(passwordInfo+";")
     file.write(emailInfo+";")
     file.write(nicknameInfo+";")
+    file.write("\n")
     file.close
     usernameEntry.delete(0,END)
     passwordEntry.delete(0,END)
     emailEntry.delete(0,END)
     nicknameEntry.delete(0,END)
     Label(screen1,text = "Registration Sucess").pack()
+
+
+def validateReg():
+    while True:
+        userRegValidate = username.get()
+        passRegValidate = password.get()
+        emailRegValidate= email.get()
+        nickRegValidate = nickname.get()
+        validForm = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+        if len(userRegValidate) < 4:
+            messagebox.showerror("Invalid Username!", "Username needs to be at least 4 characters long!")
+            break
+        
+        if len(passRegValidate) < 6:
+            messagebox.showerror("Invalid Password!", "Password should be at least 6 chatacters long!")
+            break
+        
+        if len(nickRegValidate) < 4:
+            messagebox.showerror("Invalid Nickname", "Your nickname needs to be at least 4 characters long!")
+            break
+        
+        if (re.fullmatch(validForm, emailRegValidate)):
+            register_user()
+            break
+            
+        else:
+            messagebox.showerror("Invalid E-Mail", "Your E-Mail must include the characters '@' and '.'")
+            break
+            
+        
+        
+        
+ 
+
+
 
 
 
@@ -55,11 +95,13 @@ def register():
     nicknameEntry = Entry(screen1,textvariable = nickname)
     nicknameEntry.pack()
     Label(text="").pack()
-    Button(screen1, text = "Register", width = 10, height = 1, command = register_user).pack()
+    Button(screen1, text = "Register", width = 10, height = 1, command = validateReg).pack()
+    
 
 
 def loginSuccess():
     messagebox.showinfo("Login was successfull!", "your credentials are correct!")
+
 #def loginSuccess():
 #    message = tk.Tk()
 #    message.title("Your login was Successfull")
@@ -83,6 +125,7 @@ def userNotFound():
 #    Label(message2,text = "The username does not exist").pack()
 #   Button(message2,text = "Ok",command = lambda:message2.destroy()).pack()
 
+
 def loginValidation():
     username1 = usernameValidation.get()
     password1 = passwordValidation.get()
@@ -99,6 +142,36 @@ def loginValidation():
         if username1 == Fields[0]:
             if password1 == Fields[1]:
                 loginSuccess()
+                Main = Toplevel()
+
+#Get the current screen width and height
+                screen_width = Main.winfo_screenwidth()
+                screen_height = Main.winfo_screenheight()
+
+#
+                greeting = tk.Label(text="Hello, Tkinter")
+                greeting.pack()
+
+# setting attribute
+                Main.attributes('-fullscreen', True)
+                Main.resizable(False, False)
+                Main.title("")
+
+
+                Focus = tk.LabelFrame(Main, text='' , width= screen_width-200 , height = screen_height-200  , bg = '#fff' ,  borderwidth= 0, highlightcolor='#f43', highlightthickness= 0)
+                Focus.place(x = 200 , y = 200 )
+
+                SideNav = tk.LabelFrame(Main, text='' , width= 300 , height = screen_height-200  , bg = '#023' ,  borderwidth= 0, highlightcolor='#f43', highlightthickness= 0)
+                SideNav.place(x = 0 , y = 200 )
+                Navbar = tk.LabelFrame(Main, text='' , width= screen_width , height = 200  , bg='#f23',  borderwidth= 0 ,highlightcolor='#f23', highlightthickness= 0  )
+                Navbar.place(x = 0 , y= 0)
+
+
+
+
+
+                Main.mainloop()
+                
                 return
             else:
                 invalidPassword()
