@@ -1,5 +1,6 @@
 from tkinter import *
 import os
+from tkinter import messagebox
 def register_user():
     usernameInfo = username.get()
     passwordInfo = password.get()
@@ -57,6 +58,31 @@ def register():
     Button(screen1, text = "Register", width = 10, height = 1, command = register_user).pack()
 
 
+def loginSuccess():
+    messagebox.showinfo("Login was successfull!", "your credentials are correct!")
+#def loginSuccess():
+#    message = tk.Tk()
+#    message.title("Your login was Successfull")
+#    message.geometry("150x100")
+#    Label(message,text = "You have logged in successfully").pack()
+#    Button(message,text = "Ok",command = lambda:message.destroy()).pack()
+def invalidPassword():
+    messagebox.showerror("Invalid password", "Your password is invalid!")
+#def invalidPassword():
+#    message1 = tk.Tk()
+#    message1.title("Invalid Password!")
+#   message1.geometry("150x100")
+#    Label(message1,text = "Your password is invalid!").pack()
+#    Button(message1,text = "Ok",command = lambda:message1.destroy()).pack()
+def userNotFound():
+    messagebox.showerror("Invalid username", "The username does not exist!")
+#def userNotFound():
+#    message2 = tk.Tk()
+#    message2.title("Invalid Username")
+#    message2.geometry("150x100")
+#    Label(message2,text = "The username does not exist").pack()
+#   Button(message2,text = "Ok",command = lambda:message2.destroy()).pack()
+
 def loginValidation():
     username1 = usernameValidation.get()
     password1 = passwordValidation.get()
@@ -72,12 +98,11 @@ def loginValidation():
         Fields = user.split(";")
         if username1 == Fields[0]:
             if password1 == Fields[1]:
-                print("Login  sucessfull")
+                loginSuccess()
                 return
             else:
-                print("The password you entered is not valid!")
-    
-    print("User not found")
+                invalidPassword()
+        else: userNotFound()
     
 
 def login():
