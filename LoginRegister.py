@@ -1,16 +1,36 @@
+<<<<<<< HEAD
 import builtins
 from tkinter import *
+=======
+from tkinter import *
+from tkinter import messagebox
+import tkinter as tk
+import re
+import os
+
+
+>>>>>>> 083713d5940618d14aa18ee53b76e6b36e58d9c0
 def register_user():
     usernameInfo = username.get()
     passwordInfo = password.get()
     emailInfo    = email.get()
     nicknameInfo = nickname.get()
+<<<<<<< HEAD
 
     file = open(usernameInfo+".txt", "w")
+=======
+    
+
+    file = open("utilizadores.txt","a")
+>>>>>>> 083713d5940618d14aa18ee53b76e6b36e58d9c0
     file.write(usernameInfo+";")
     file.write(passwordInfo+";")
     file.write(emailInfo+";")
     file.write(nicknameInfo+";")
+<<<<<<< HEAD
+=======
+    file.write("\n")
+>>>>>>> 083713d5940618d14aa18ee53b76e6b36e58d9c0
     file.close
     usernameEntry.delete(0,END)
     passwordEntry.delete(0,END)
@@ -19,6 +39,41 @@ def register_user():
     Label(screen1,text = "Registration Sucess").pack()
 
 
+<<<<<<< HEAD
+=======
+def validateReg():
+    while True:
+        userRegValidate = username.get()
+        passRegValidate = password.get()
+        emailRegValidate= email.get()
+        nickRegValidate = nickname.get()
+        validForm = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+        
+        if len(userRegValidate) < 4:
+            messagebox.showerror("Invalid Username!", "Username needs to be at least 4 characters long!")
+            break
+        
+        if len(passRegValidate) < 6:
+            messagebox.showerror("Invalid Password!", "Password should be at least 6 chatacters long!")
+            break
+        
+        if len(nickRegValidate) < 4:
+            messagebox.showerror("Invalid Nickname", "Your nickname needs to be at least 4 characters long!")
+            break
+        
+        if (re.fullmatch(validForm, emailRegValidate)):
+            register_user()
+            break
+            
+        else:
+            messagebox.showerror("Invalid E-Mail", "Your E-Mail must include the characters '@' and '.'")
+        
+    
+    
+        
+
+                                
+>>>>>>> 083713d5940618d14aa18ee53b76e6b36e58d9c0
 
 def register():
     global screen1
@@ -44,7 +99,11 @@ def register():
     usernameEntry = Entry(screen1,textvariable = username)
     usernameEntry.pack()
     Label(screen1,text="Password *(Min 6 char)").pack()
+<<<<<<< HEAD
     passwordEntry = Entry(screen1,textvariable = password)
+=======
+    passwordEntry = Entry(screen1,textvariable = password, show = "*")
+>>>>>>> 083713d5940618d14aa18ee53b76e6b36e58d9c0
     passwordEntry.pack()
     Label(screen1,text="E-mail *(Must include '@' and '.')").pack()
     emailEntry = Entry(screen1,textvariable = email)
@@ -53,6 +112,7 @@ def register():
     nicknameEntry = Entry(screen1,textvariable = nickname)
     nicknameEntry.pack()
     Label(text="").pack()
+<<<<<<< HEAD
     Button(screen1, text = "Register", width = 10, height = 1, command = register_user).pack()
 
 
@@ -61,6 +121,123 @@ def register():
 
 def login():
     print("Login session started")
+=======
+    Button(screen1, text = "Register", width = 10, height = 1, command = validateReg).pack()
+    
+
+
+def loginSuccess():
+    messagebox.showinfo("Login was successfull!", "your credentials are correct!")
+
+#def loginSuccess():
+#    message = tk.Tk()
+#    message.title("Your login was Successfull")
+#    message.geometry("150x100")
+#    Label(message,text = "You have logged in successfully").pack()
+#    Button(message,text = "Ok",command = lambda:message.destroy()).pack()
+def invalidPassword():
+    messagebox.showerror("Invalid password", "Your password is invalid!")
+#def invalidPassword():
+#    message1 = tk.Tk()
+#    message1.title("Invalid Password!")
+#   message1.geometry("150x100")
+#    Label(message1,text = "Your password is invalid!").pack()
+#    Button(message1,text = "Ok",command = lambda:message1.destroy()).pack()
+def userNotFound():
+    messagebox.showerror("Invalid username", "The username does not exist!")
+#def userNotFound():
+#    message2 = tk.Tk()
+#    message2.title("Invalid Username")
+#    message2.geometry("150x100")
+#    Label(message2,text = "The username does not exist").pack()
+#   Button(message2,text = "Ok",command = lambda:message2.destroy()).pack()
+
+
+def loginValidation():
+    username1 = usernameValidation.get()
+    password1 = passwordValidation.get()
+    usernameEntry1.delete(0,END)
+    passwordEntry1.delete(0,END)
+
+    #List_of_files = os.listdir()
+
+    file1 = open("utilizadores.txt", "r") 
+    loginValidation = file1.readlines()
+    file1.close()
+    for user in loginValidation:
+        Fields = user.split(";")
+        if username1 == Fields[0]:
+            if password1 == Fields[1]:
+                loginSuccess()
+                Main = Toplevel()
+
+#Get the current screen width and height
+                screen_width = Main.winfo_screenwidth()
+                screen_height = Main.winfo_screenheight()
+
+#
+                greeting = tk.Label(text="Hello, Tkinter")
+                greeting.pack()
+
+# setting attribute
+                Main.attributes('-fullscreen', True)
+                Main.resizable(False, False)
+                Main.title("")
+
+
+                Focus = tk.LabelFrame(Main, text='' , width= screen_width-200 , height = screen_height-200  , bg = '#fff' ,  borderwidth= 0, highlightcolor='#f43', highlightthickness= 0)
+                Focus.place(x = 200 , y = 200 )
+
+                SideNav = tk.LabelFrame(Main, text='' , width= 300 , height = screen_height-200  , bg = '#023' ,  borderwidth= 0, highlightcolor='#f43', highlightthickness= 0)
+                SideNav.place(x = 0 , y = 200 )
+                Navbar = tk.LabelFrame(Main, text='' , width= screen_width , height = 200  , bg='#f23',  borderwidth= 0 ,highlightcolor='#f23', highlightthickness= 0  )
+                Navbar.place(x = 0 , y= 0)
+
+
+
+
+
+                Main.mainloop()
+                
+                return
+            else:
+                invalidPassword()
+        else: userNotFound()
+    
+
+def login():
+    global screen2
+    global usernameEntry1
+    global passwordEntry1
+    global usernameValidation
+    global passwordValidation
+    screen2 = Toplevel(screen)
+    screen2.title("login")
+    screen2.geometry("300x250")
+    Label(screen2,text = "Please enter your information").pack()
+    Label(screen2,text = "").pack()
+    
+    
+    
+    usernameValidation = StringVar()
+    passwordValidation = StringVar()
+
+    Label(screen2,text = "Username").pack()
+    usernameEntry1 = Entry(screen2, textvariable = usernameValidation)
+    usernameEntry1.pack()
+    Label(screen2,text = "").pack()
+    Label(screen2,text = "Password").pack()
+    passwordEntry1 = Entry(screen2, textvariable = passwordValidation,show = "*")
+    passwordEntry1.pack()
+    Label(screen2,text = "").pack()
+    Button(screen2, text = "Login", width = 10, height = 1,command = loginValidation).pack()
+
+
+    
+    
+    
+
+>>>>>>> 083713d5940618d14aa18ee53b76e6b36e58d9c0
 
 
 
