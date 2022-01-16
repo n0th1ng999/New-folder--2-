@@ -36,14 +36,26 @@ def validateReg():
         
         if len(userRegValidate) < 4:
             messagebox.showerror("Invalid Username!", "Username needs to be at least 4 characters long!")
+            username.set("")
+            password.set("")
+            email.set("")
+            nickname.set("")
             break
         
         if len(passRegValidate) < 6:
             messagebox.showerror("Invalid Password!", "Password should be at least 6 chatacters long!")
+            username.set("")
+            password.set("")
+            email.set("")
+            nickname.set("")
             break
         
         if len(nickRegValidate) < 4:
             messagebox.showerror("Invalid Nickname", "Your nickname needs to be at least 4 characters long!")
+            username.set("")
+            password.set("")
+            email.set("")
+            nickname.set("")
             break
         
         if (re.fullmatch(validForm, emailRegValidate)):
@@ -52,6 +64,10 @@ def validateReg():
             
         else:
             messagebox.showerror("Invalid E-Mail", "Your E-Mail must include the characters '@' and '.'")
+            username.set("")
+            password.set("")
+            email.set("")
+            nickname.set("")
         
     
     
