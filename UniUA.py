@@ -1,10 +1,9 @@
 from cgitb import text
-from distutils.command.build import build
-from re import T
-from this import d
 from tkinter import *
 from turtle import title
 from PIL import ImageTk,Image
+from tkinter import ttk
+
 
 
 UA = Tk()
@@ -23,10 +22,22 @@ def paginaFaculdades2():
 
 def paginaCurso1():
     global curso1
+
     curso1 = Tk()
     curso1.geometry("1980x1600")
     voltarAtras = Button(curso1, text = "Voltar atrás", font = (20), command = paginaFaculdades1)
     voltarAtras.place(x = 20,y = 20)
+    tituloCurso1 = Message(curso1,text = "Ano 1",font= "500")
+    tituloCurso1.place(x = 200,y = 50)
+    tituloCurso1_1 = Message(curso1,text = "Ano 2",font= "500")
+    tituloCurso1_1.place(x = 200,y = 700)
+    infoCurso1 = Message(curso1, text= "1º Semestre\n\nAnatomo-fisiologia I\n\nIntrodução à Psicologia\n\nMatemáticas Gerais I\n\nMetodologia de Investigação em Psicologia\n\nGenética e Evolução\n\n\n\n2º Semestre\n\nAnatomo-fisiologia II\n\nMatemáticas Gerais II\n\nPsicobiologia\n\nPsicologia da Atenção e da Percepção\n\nPsicologia da Memória\n\n\nTotal\n\n\n\n\n\n",font = "200")
+    infoCurso1.place(x = 400, y = 100)
+    infoCurso1_1 = Message(curso1,text = "Área Científica\n\nCTS\n\nPSIC\n\nM\n\nPSIC\n\nB\n\n\n\nÁrea Científica\n\nCTS\n\nM\n\nPSIC\n\nPSIC\n\nPSIC\n\n\n\n\n\n\n\n\n",font = "200")
+    infoCurso1_1.place(x = 950, y = 100)
+    infoCurso1_2 = Message(curso1, text = "Créditos ECTS\n\n6\n\n6\n\n6\n\n6\n\n6\n\n\n\nCréditos ECTS\n\n6\n\n6\n\n6\n\n6\n\n6\n\n\n60\n\n\n\n\n\n",font = "200")
+    infoCurso1_2.place(x = 1250, y = 100)
+    
 
     curso1.mainloop()
 
