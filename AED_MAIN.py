@@ -1,6 +1,6 @@
 import tkinter as tk
 
-Main = tk.Tk()
+        self.data_folder = "InfoCursos\\"+self.Universidade+"\\"
 
 #Get the current screen width and height
 screen_width = Main.winfo_screenwidth()
