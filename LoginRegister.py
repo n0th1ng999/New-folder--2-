@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 import builtins
 from tkinter import *
-=======
 from tkinter import *
 from tkinter import messagebox
 import tkinter as tk
@@ -9,28 +8,27 @@ import re
 import os
 
 
->>>>>>> 083713d5940618d14aa18ee53b76e6b36e58d9c0
+
 def register_user():
     usernameInfo = username.get()
     passwordInfo = password.get()
     emailInfo    = email.get()
     nicknameInfo = nickname.get()
-<<<<<<< HEAD
 
     file = open(usernameInfo+".txt", "w")
-=======
+
     
 
     file = open("utilizadores.txt","a")
->>>>>>> 083713d5940618d14aa18ee53b76e6b36e58d9c0
+
     file.write(usernameInfo+";")
     file.write(passwordInfo+";")
     file.write(emailInfo+";")
     file.write(nicknameInfo+";")
-<<<<<<< HEAD
-=======
+
+
     file.write("\n")
->>>>>>> 083713d5940618d14aa18ee53b76e6b36e58d9c0
+
     file.close
     usernameEntry.delete(0,END)
     passwordEntry.delete(0,END)
@@ -39,8 +37,6 @@ def register_user():
     Label(screen1,text = "Registration Sucess").pack()
 
 
-<<<<<<< HEAD
-=======
 def validateReg():
     while True:
         userRegValidate = username.get()
@@ -86,11 +82,7 @@ def validateReg():
         
     
     
-        
-
-                                
->>>>>>> 083713d5940618d14aa18ee53b76e6b36e58d9c0
-
+                                       
 def register():
     global screen1
     screen1 = Toplevel(screen)
@@ -115,11 +107,10 @@ def register():
     usernameEntry = Entry(screen1,textvariable = username)
     usernameEntry.pack()
     Label(screen1,text="Password *(Min 6 char)").pack()
-<<<<<<< HEAD
     passwordEntry = Entry(screen1,textvariable = password)
-=======
+
     passwordEntry = Entry(screen1,textvariable = password, show = "*")
->>>>>>> 083713d5940618d14aa18ee53b76e6b36e58d9c0
+
     passwordEntry.pack()
     Label(screen1,text="E-mail *(Must include '@' and '.')").pack()
     emailEntry = Entry(screen1,textvariable = email)
@@ -128,7 +119,7 @@ def register():
     nicknameEntry = Entry(screen1,textvariable = nickname)
     nicknameEntry.pack()
     Label(text="").pack()
-<<<<<<< HEAD
+
     Button(screen1, text = "Register", width = 10, height = 1, command = register_user).pack()
 
 
@@ -137,7 +128,7 @@ def register():
 
 def login():
     print("Login session started")
-=======
+
     Button(screen1, text = "Register", width = 10, height = 1, command = validateReg).pack()
     
 
@@ -253,7 +244,7 @@ def login():
     
     
 
->>>>>>> 083713d5940618d14aa18ee53b76e6b36e58d9c0
+
 
 
 
