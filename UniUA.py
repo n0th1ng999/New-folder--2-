@@ -43,7 +43,8 @@ class ScrollBar:
         \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n            
                     Ano 3\n\n\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\tÁrea Científica\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAvaliação Psicológica I\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\t\t\t\t\t\tContextos de Aplicação em Psicologia I\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tPrática de Investigação I\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tPsicopatologia I: Criança e Adolescente\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tRaciocínio e Tomada de Decisão\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n
                          \n\n\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\tÁrea Científica\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAvaliação Psicológica II\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tContextos de Aplicação em Psicologia II\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tPrática de Investigação II\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tPsicopatologia II: Adulto e Idoso\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tOpção\n\n\n\n\t\t\t\t\t\t\t·Introdução à Cronopsicologia\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t·Modificação do Comportamento\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t·Psicologia da Família e Redes Sociais\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t·Psicologia do Bem-estar Pessoal\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t·Psiconeuroimunologia\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n
-        \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n''')
+        \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n
+                LEGENDA:\n\t\tCTS = Ciências e Tecnologias da saúde\n\t\tPSIC = Psicologia\n\t\tM = Matemática\n\t\tB = Biologia''')
         textoCurso1.pack(side = TOP,fill = X)
         v.config(command=textoCurso1.yview)
         voltarAtras1 = Button(textoCurso1,text = "Voltar atrás",font = 20, command = paginaFaculdades1)
@@ -66,7 +67,8 @@ class ScrollBar:
         \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n
                     Ano 3\n\n\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\tÁrea Científica\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tGestão de Operações\t\t\t\t\t\t\tEGI\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tEmpreendedorismo\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tGestão Integrada de Projectos\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tAuditoria\t\t\t\t\t\t\tC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tGestão Financeira II\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n
                          \n\n\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\tÁrea Científica\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tLogística\t\t\t\t\t\t\tEGI\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tControlo de Gestão\t\t\t\t\t\t\tC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tFiscalidade\t\t\t\t\t\t\tC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tGestão da Qualidade\t\t\t\t\t\t\tEGI\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tOpção\n\n\n\n\t\t\t\t\t\t\t·Contabilidade Analitica Avançada\t\t\t\t\t\tC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t.Gestão de Serviços\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t.Gestão Estratégica\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t.Novas Formas de Negócio\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n
-        \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n''')
+        \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n
+                LEGENDA:\n\t\t E = Economia\n\t\tGES = Gestão\n\t\tM = Matemática\n\t\tCJ = Ciências Jurídicas\n\t\tC = Contabilidade''')
 
         texoCurso2.pack(side = TOP,fill = X)
         v.config(command= texoCurso2.yview)
