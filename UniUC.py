@@ -1,10 +1,12 @@
 from email.mime import image
 import imp
+from itertools import tee
 import re
 from textwrap import wrap
 from tkinter import *
 from PIL import ImageTk,Image
 from tkinter import ttk
+from numpy import size
 from tkVideoPlayer import TkinterVideo
 
 
@@ -25,7 +27,7 @@ def paginaFaculdades2UC():
 class ScrollBar:
     def paginaCurso1UC():
         global curso1UC
-        curso1UC = Tk()
+        curso1UC = Toplevel()
         curso1UC.geometry("1980x1600")
         v = Scrollbar(curso1UC)
         v.pack(side = RIGHT,fill = Y)
@@ -36,9 +38,14 @@ class ScrollBar:
         v.config(command = textoCurso1UC.yview)
         voltarAtras1UC = Button(textoCurso1UC,text = "Voltar atrás",font = 20, command = paginaFaculdades1UC)
         voltarAtras1UC.place(x = 20,y = 20)
+        videoplayer = TkinterVideo(master=textoCurso1UC, scaled=True, pre_load=False)
+        videoplayer.load(r"UC1.mp4")
+        videoplayer.place(x = 200,y = 800)
 
+        videoplayer.play() # play the video
         textoCurso1UC.config(state = DISABLED)
-        curso1UC.mainloop
+        curso1UC.mainloop()
+        
 
     def paginaCurso2UC():
         global curso2UC
@@ -73,6 +80,6 @@ Complementarmente, pretende-se encorajar os estudantes a valorizar algumas compe
 
 
 
-
+    
 s = ScrollBar()
 UC.mainloop()
