@@ -1,7 +1,7 @@
 from fileinput import filename
 
 import os
-from tkinter import Button, Toplevel
+from tkinter import Button, Tk, Toplevel
 from unicodedata import name
 
 def callback(name):
@@ -15,7 +15,7 @@ def callback(name):
 
 
 totalDir = 0
-paginaBlah = Toplevel()
+paginaBlah = Tk()
 pageUni = r"infoCursos"
 for base, dirs, files in os.walk(pageUni):
     for directories in dirs:
