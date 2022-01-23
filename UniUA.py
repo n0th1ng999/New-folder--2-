@@ -1,5 +1,6 @@
 from cgitb import text
 from distutils import command
+from re import T
 from textwrap import fill, wrap
 from tkinter import *
 from tkinter.simpledialog import SimpleDialog
@@ -17,7 +18,8 @@ canvas = Canvas(UA, width = 1600, height = 1600)
 canvas.pack()  
 img = ImageTk.PhotoImage(Image.open(r"imagens//UA//PROJ_UA_LOGO.png")) 
 canvas.create_image(250,20, anchor=NW, image=img)
-    
+cursoUA1 = "Psicologia" 
+cursoUA2 = "Gestão" 
 
 def paginaFaculdades1UA():
         curso1UA.withdraw()
@@ -28,11 +30,13 @@ def paginaFaculdades2UA():
 class ScrollBar:
     def paginaCurso1UA():
         global curso1UA
+        global userComment
+
 
         curso1UA = Tk()
         curso1UA.geometry("1980x1600") 
         v = Scrollbar(curso1UA)
-        v.pack(side = RIGHT,fill = Y)
+        v.pack(side= RIGHT,fill = Y)
         textoCurso1UA = Text(curso1UA, width = 1980,height = 1600,wrap = NONE,relief = FLAT, font = "200",yscrollcommand = v.set)
         textoCurso1UA.insert(END,'''\n\n\n\n\n
                     Ano 1\n\n\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\tÁrea Científica\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAnatomo-fisiologia I\t\t\t\t\t\t\tCTS\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tIntrodução à Psicologia\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tMatemáticas Gerais I\t\t\t\t\t\t\tM\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tMetodologia de Investigação em Psicologia\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tGenética e Evolução\t\t\t\t\t\t\tB\t\t\t\t\t\t\t6'''+'''\n\n\n\n
@@ -45,10 +49,21 @@ class ScrollBar:
                          \n\n\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\tÁrea Científica\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAvaliação Psicológica II\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tContextos de Aplicação em Psicologia II\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tPrática de Investigação II\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tPsicopatologia II: Adulto e Idoso\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tOpção\n\n\n\n\t\t\t\t\t\t\t·Introdução à Cronopsicologia\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t·Modificação do Comportamento\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t·Psicologia da Família e Redes Sociais\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t·Psicologia do Bem-estar Pessoal\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t·Psiconeuroimunologia\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n
         \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n
                 LEGENDA:\n\t\tCTS = Ciências e Tecnologias da saúde\n\t\tPSIC = Psicologia\n\t\tM = Matemática\n\t\tB = Biologia''')
-        textoCurso1UA.pack(side = TOP,fill = X)
+        textoCurso1UA.pack()
         v.config(command=textoCurso1UA.yview)
         voltarAtras1 = Button(textoCurso1UA,text = "Voltar atrás",font = 20, command = paginaFaculdades1UA)
         voltarAtras1.place(x=20,y=20)
+
+        
+        userComment = Text(textoCurso1UA,width =40,height=10,font = 20,relief= "sunken")
+        userComment.place(x = 20,y = 500)
+        commentBtn = Button(textoCurso1UA,text="Comment",font = 20,command = comment_txt)
+        commentBtn.place(x = 20,y =700)
+        
+        
+
+
+
         textoCurso1UA.config(state = DISABLED)
     
     def paginaCurso2UA():
@@ -95,9 +110,14 @@ O plano proposto cobre todas as áreas principais da Gestão, dá a oportunidade
 
 
 
-
+def comment_txt():
+    commentFile = open("comment.txt","a")
+    input = commentFile.write(userComment.get(1.0, END))
     
-s = ScrollBar()
+    
+    
+    commentFile.close()
+
 
 
    

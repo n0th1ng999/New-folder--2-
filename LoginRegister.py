@@ -8,14 +8,12 @@ import re
 import os
 
 
-
+global admin
 def register_user():
     usernameInfo = username.get()
     passwordInfo = password.get()
     emailInfo    = email.get()
     nicknameInfo = nickname.get()
-
-    file = open(usernameInfo+".txt", "w")
 
     
 
@@ -120,7 +118,7 @@ def register():
     nicknameEntry.pack()
     Label(text="").pack()
 
-    Button(screen1, text = "Register", width = 10, height = 1, command = register_user).pack()
+    Button(screen1, text = "Register", width = 10, height = 1, command = validateReg).pack()
 
 
 
@@ -167,15 +165,20 @@ def loginValidation():
     passwordEntry1.delete(0,END)
 
     #List_of_files = os.listdir()
-
+    global admin
+    admin = False
     file1 = open("utilizadores.txt", "r") 
     loginValidation = file1.readlines()
     file1.close()
     for user in loginValidation:
+        
         Fields = user.split(";")
         if username1 == Fields[0]:
             if password1 == Fields[1]:
                 loginSuccess()
+                if username1 == "jose" and password1 == "nogueira":
+                    admin = True
+                    print("Welcome Admin")
                 Main = Toplevel()
 
 #Get the current screen width and height
