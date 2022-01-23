@@ -15,8 +15,6 @@ def register_user():
     emailInfo    = email.get()
     nicknameInfo = nickname.get()
 
-    file = open(usernameInfo+".txt", "w")
-
     
 
     file = open("utilizadores.txt","a")
@@ -120,7 +118,7 @@ def register():
     nicknameEntry.pack()
     Label(text="").pack()
 
-    Button(screen1, text = "Register", width = 10, height = 1, command = register_user).pack()
+    Button(screen1, text = "Register", width = 10, height = 1, command = validateReg).pack()
 
 
 
