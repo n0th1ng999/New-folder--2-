@@ -1,0 +1,9 @@
+Licenciatura em Tecnologias e Sistemas de Informação Para a Web
+A licenciatura assenta numa visão contemporânea e multidisciplinar da Web, agregando competências focadas na conceção, design e desenvolvimento de produtos e software para a Web. Procura dotar os estudantes de conhecimento e competências práticas que lhes permitam o domínio de áreas emergentes como os serviços centrados na cloud, a computação móvel e ubíqua, ou plataformas Web e de negócio eletrónico, sem descurar competências hoje em dia fundamentais, como ergonomia e design de interação, usabilidade e user experience ou prototipagem de plataformas digitais.
+Esta característica de aliar competências relacionadas com o desenvolvimento de produtos a conceitos emergentes relacionados com o design de interfaces (user interface & user experience) é uma característica distintiva desta licenciatura e um dos motivos do seu grande sucesso!
+Esta é ainda uma área de atuação onde a empregabilidade está próxima do pleno emprego. De acordo com estudo realizado em 2019 junto dos diplomados desta licenciatura, a taxa de desemprego foi de 0%, isto é, verificou-se uma situação de pleno emprego!
+O curso privilegia ainda uma vertente eminentemente prática, como o demonstram os projetos incluídos no seu plano de estudos desde o 1.º ano, assim como uma forte ligação ao meio empresarial. Prova disso é o alargado leque de parceiros tecnológicos do curso, como a IOTech, ikuTeam, Helppier, Xing, Zalox, Ground Contro Studios, e-Goi, Nonius Software, BindTuning, FMQ, Increase Time, Interactive Brand, InovaMais, TechPitch, Blip, GoWeb, Planeta Virtual, INESC_TEC, Samsys, MGS, Celfocus, touchIT, MOG Technologies, entre outras.
+Algoritmia e Estruturas de Dados;1º Semestre;7
+Algoritmia e Estruturas de Dados;2º Semestre;7
+Algoritmia e Estruturas de Dados;3º Semestre;7
+Algoritmia e Estruturas de Dados;4º Semestre;7
