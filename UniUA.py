@@ -16,7 +16,7 @@ UA = Tk()
 UA.geometry("1920x1080")   
 canvas = Canvas(UA, width = 1600, height = 1600)  
 canvas.pack()  
-img = ImageTk.PhotoImage(Image.open(r"C:\Users\Silgueira\Desktop\AED Tema B\Imagens\PROJ_UA_LOGO.png")) 
+img = ImageTk.PhotoImage(Image.open(r"imagens//UA//PROJ_UA_LOGO.png")) 
 canvas.create_image(250,20, anchor=NW, image=img)
 cursoUA1 = "Psicologia" 
 cursoUA2 = "Gestão" 
@@ -34,7 +34,7 @@ class ScrollBar:
 
 
         curso1UA = Tk()
-        curso1UA.geometry("1980x1600")
+        curso1UA.geometry("1980x1600") 
         v = Scrollbar(curso1UA)
         v.pack(side= RIGHT,fill = Y)
         textoCurso1UA = Text(curso1UA, width = 1980,height = 1600,wrap = NONE,relief = FLAT, font = "200",yscrollcommand = v.set)
