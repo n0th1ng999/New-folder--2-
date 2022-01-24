@@ -34,9 +34,24 @@ class ScrollBar:
 
         curso1UA = Tk()
         curso1UA.geometry("1980x1600")
-        v = Scrollbar(curso1UA)
+        frameCursoUA = Frame(curso1UA,width = 400,height = 100,relief = "sunken")
+        frameCursoUA.pack(side = TOP)
+        espaço = Label(curso1UA,text = "")
+        espaço.pack()
+        espaço = Label(curso1UA,text = "")
+        espaço.pack()
+        comentarioLabel = Label(curso1UA,text = "Comentarios",font = "200")
+        comentarioLabel.pack()
+        espaço = Label(curso1UA,text = "")
+        espaço.pack()
+        frameComentariosUA = Frame(curso1UA,width=400,height=5,relief = "sunken")
+        frameComentariosUA.pack(side = BOTTOM)
+        v = Scrollbar(frameCursoUA)
         v.pack(side = RIGHT,fill = Y)
-        textoCurso1UA = Text(curso1UA, width = 1980,height = 1600,wrap = NONE,relief = FLAT, font = "200",yscrollcommand = v.set)
+        comentarios = Text(frameComentariosUA,width = 100, height = 20,wrap = NONE)
+        comentarios.insert(END,"dfugdsgdsugfi")
+        comentarios.pack()
+        textoCurso1UA = Text(frameCursoUA, width = 200,height = 35,wrap = NONE,relief = FLAT, font = "200",yscrollcommand = v.set)
         textoCurso1UA.insert(END,'''\n\n\n\n\n
                     Ano 1\n\n\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\tÁrea Científica\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAnatomo-fisiologia I\t\t\t\t\t\t\tCTS\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tIntrodução à Psicologia\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tMatemáticas Gerais I\t\t\t\t\t\t\tM\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tMetodologia de Investigação em Psicologia\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tGenética e Evolução\t\t\t\t\t\t\tB\t\t\t\t\t\t\t6'''+'''\n\n\n\n
                          \n\n\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\tÁrea Científica\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAnatomo-fisiologia II\t\t\t\t\t\t\tCTS\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tMatemáticas Gerais II\t\t\t\t\t\t\tM\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tPsicobiologia\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tPsicologia da Atenção e da Percepção\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tPsicologia da Memória\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n
@@ -58,9 +73,24 @@ class ScrollBar:
         global curso2UA
         curso2UA = Tk()
         curso2UA.geometry("1980x1600")
-        v = Scrollbar(curso2UA)
+        frameCurso2UA = Frame(curso2UA,width = 400,height = 100,relief = "sunken")
+        frameCurso2UA.pack(side = TOP)
+        espaço = Label(curso2UA,text = "")
+        espaço.pack()
+        espaço = Label(curso2UA,text = "")
+        espaço.pack()
+        comentarioLabel = Label(curso2UA,text = "Comentarios",font = "200")
+        comentarioLabel.pack()
+        espaço = Label(curso2UA,text = "")
+        espaço.pack()
+        frameComentarios2UA = Frame(curso2UA,width=400,height=5,relief = "sunken")
+        frameComentarios2UA.pack(side = BOTTOM)
+        v = Scrollbar(frameCurso2UA)
         v.pack(side = RIGHT,fill = Y)
-        texoCurso2UA = Text(curso2UA, width = 1980, height = 1600,wrap = NONE,relief = FLAT,font = "200",yscrollcommand = v.set)
+        comentarios = Text(frameComentarios2UA,width = 100, height = 20,wrap = NONE)
+        comentarios.insert(END,"dfugdsgdsugfi")
+        comentarios.pack()
+        texoCurso2UA = Text(frameCurso2UA, width = 200, height = 35,wrap = NONE,relief = FLAT,font = "200",yscrollcommand = v.set)
         texoCurso2UA.insert(END,'''\n\n\n\n\n
                     Ano 1\n\n\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\tÁrea Científica\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tEconomia I\t\t\t\t\t\t\tE\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tGestão de Empresas\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tCálculo I\t\t\t\t\t\t\tM\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tGestão da Informação\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tDireito das Empresas I\t\t\t\t\t\t\tCJ\t\t\t\t\t\t\t6\n\n\n\n
                          \n\n\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\tÁrea Científica\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tEconomia II\t\t\t\t\t\t\tE\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tComportamento Organizacional\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tCálculo II\t\t\t\t\t\t\tM\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tTeoria da Contabilidade\t\t\t\t\t\t\tC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tTeoria das Organizações\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n

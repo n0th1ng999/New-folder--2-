@@ -1,10 +1,11 @@
 from ast import arg
-from cgitb import text
+from cgitb import grey, text
 from distutils import command
+import re
 from textwrap import fill, wrap
 from tkinter import *
 from tkinter.simpledialog import SimpleDialog
-from turtle import title
+from turtle import bgcolor, title
 from PIL import ImageTk,Image
 from tkinter import ttk
 
@@ -44,9 +45,24 @@ class ScrollBar:
         cursoESMAD = Tk()
         cursoESMAD.geometry("1980x2000") 
         cursoESMAD.state("zoomed")
-        v = Scrollbar(cursoESMAD)
+        frameCursoESMAD = Frame(cursoESMAD,width = 400,height = 100,relief = "sunken")
+        frameCursoESMAD.pack(side = TOP)
+        espaço = Label(cursoESMAD,text = "")
+        espaço.pack()
+        espaço = Label(cursoESMAD,text = "")
+        espaço.pack()
+        comentarioLabel = Label(cursoESMAD,text = "Comentarios",font = "200")
+        comentarioLabel.pack()
+        espaço = Label(cursoESMAD,text = "")
+        espaço.pack()
+        frameComentariosESMAD = Frame(cursoESMAD,width=400,height=5,relief = "sunken")
+        frameComentariosESMAD.pack(side = BOTTOM)
+        v = Scrollbar(frameCursoESMAD)
         v.pack(side = RIGHT,fill = Y)
-        textoCurso1ESMAD = Text(cursoESMAD, width = 1980,height = 1600,wrap = NONE,relief = FLAT, font = "200",yscrollcommand = v.set)
+        comentarios = Text(frameComentariosESMAD,width = 100, height = 20,wrap = NONE)
+        comentarios.insert(END,"dfugdsgdsugfi")
+        comentarios.pack()
+        textoCurso1ESMAD = Text(frameCursoESMAD, width = 200,height = 35,wrap = NONE,relief = FLAT, font = "200",yscrollcommand = v.set)
         textoCurso1ESMAD.insert(END,'''\n\n\n\n\n
                     Ano 1\n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAlgoritmia e Estruturas de Dados\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\tFundamentos de Design\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tMatemática I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tSistemas Computacionais\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tTecnologias Web\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7'''+'''\n\n\n\n
                          \n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tConceção e Produção Multimédia\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tInterfaces e Design para Aplicações\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tMatemática II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tProgramação Orientada a Objetos\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\tProjeto I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n
@@ -74,9 +90,26 @@ class ScrollBar:
         curso2ESMAD = Tk()
         curso2ESMAD.geometry("1980x1600")
         curso2ESMAD.state("zoomed")
-        v = Scrollbar(curso2ESMAD)
+        frameCurso2ESMAD = Frame(curso2ESMAD,width = 400,height = 100,relief = "sunken")
+        frameCurso2ESMAD.pack(side = TOP)
+        espaço = Label(curso2ESMAD,text = "")
+        espaço.pack()
+        espaço = Label(curso2ESMAD,text = "")
+        espaço.pack()
+        comentarioLabel = Label(curso2ESMAD,text = "Comentarios",font = "200")
+        comentarioLabel.pack()
+        espaço = Label(curso2ESMAD,text = "")
+        espaço.pack()
+
+        frameComentarios2ESMAD = Frame(curso2ESMAD,width=400,height=5,relief = "sunken")
+        frameComentarios2ESMAD.pack(side = BOTTOM)
+        v = Scrollbar(frameCurso2ESMAD)
         v.pack(side = RIGHT,fill = Y)
-        texoCurso2ESMAD = Text(curso2ESMAD, width = 1980, height = 1600,wrap = NONE,relief = FLAT,font = "200",yscrollcommand = v.set)
+        comentarios = Text(frameComentarios2ESMAD,width = 100, height = 20,wrap = NONE)
+        comentarios.insert(END,"dfugdsgdsugfi")
+        comentarios.pack()
+        
+        texoCurso2ESMAD = Text(frameCurso2ESMAD, width = 200, height = 35,relief = FLAT,font = "200",yscrollcommand = v.set)
         texoCurso2ESMAD.insert(END,'''\n\n\n\n\n
                     Ano 1\n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAnimação I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tFotografia I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tInformática Aplicada\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tSemiótica I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t3\n\n\n\n\t\t\t\t\t\tTecnologias Multimédia\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tTeoria da Comunicação Multimédia\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t3'''+'''\n\n\n\n
                          \n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tDesign da Comunicação I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t4\n\n\n\n\t\t\t\t\t\tLaboratório I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\tProgramação I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\tSemiótica II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t3\n\n\n\n\t\t\t\t\t\tSom I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tVideo I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n
@@ -88,7 +121,7 @@ class ScrollBar:
                          \n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tLegislação e Autoria\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t2\n\n\n\n\t\t\t\t\t\tMarketing e Gestão de Projectos\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t2\n\n\n\n\t\t\t\t\t\tProjecto\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t20\n\n\n\n\t\t\t\t\t\tSeminário\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t2\n\n\n\n\t\t\t\t\t\t
         \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n''')
 
-        texoCurso2ESMAD.pack(side = TOP,fill = X)
+        texoCurso2ESMAD.pack()
         v.config(command= texoCurso2ESMAD.yview)
         voltarAtras2 = Button(texoCurso2ESMAD, text = "Voltar atrás", font = (20), command = paginaFaculdades2ESMAD)
         voltarAtras2.place(x=20, y= 20)
