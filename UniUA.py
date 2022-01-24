@@ -15,7 +15,7 @@ UA = Tk()
 UA.geometry("1920x1080")   
 canvas = Canvas(UA, width = 1600, height = 1600)  
 canvas.pack()  
-img = ImageTk.PhotoImage(Image.open(r"UC1Users\Silgueira\Desktop\AED Tema B\Imagens\PROJ_UA_LOGO.png")) 
+img = ImageTk.PhotoImage(Image.open(r"C:\Users\Silgueira\Desktop\AED Tema B\ProjetoAED_TemaB\imagens\UA\PROJ_UA_LOGO.png")) 
 canvas.create_image(250,20, anchor=NW, image=img)
     
 
