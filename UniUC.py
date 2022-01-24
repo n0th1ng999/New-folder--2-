@@ -6,8 +6,6 @@ from textwrap import wrap
 from tkinter import *
 from PIL import ImageTk,Image
 from tkinter import ttk
-from numpy import size
-from tkVideoPlayer import TkinterVideo
 
 
 
@@ -15,7 +13,7 @@ UC = Tk()
 UC.geometry("1920x1080")
 canvas = Canvas(UC,width = 1600,height = 1600)
 canvas.pack()
-img = ImageTk.PhotoImage(Image.open(r"imagens//UC//PROJ_UC_LOGO.png"))
+img = ImageTk.PhotoImage(Image.open(r"C:\Users\Silgueira\Desktop\AED Tema B\Imagens\PROJ_UC_LOGO.png"))
 canvas.create_image(250,20, anchor = NW,image=img)
 
 def paginaFaculdades1UC():

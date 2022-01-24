@@ -11,8 +11,8 @@ class AED_Main():
     
 
         #File Path Pre feito serve pra teste apenas // URGENTE MUDAR !!!
-        self.Universidade="Porto"
-        self.curso="CursoA"
+        self.Universidade="ESMAD"
+        self.curso="1"
         self.data_folder = "InfoCursos\\"+self.Universidade+"\\"
         self.file_to_open = self.data_folder + self.curso +".txt"
 
@@ -20,6 +20,8 @@ class AED_Main():
         self.f = open(self.file_to_open)
         self.Textos=[]
         
+        
+
         for l in self.f:
             a = l.split(";")
             self.Textos.append(a)
@@ -52,7 +54,7 @@ class AED_Main():
 
         #Text Box com texto
         self.Texto = tk.Text(self.root ,height=10, width=30)
-        self.Texto.insert(tk.END, self.Textos[self.i][1])
+        self.Texto.insert(tk.END, self.Textos[self.i][0])
         self.Texto.pack()
 
         #frame para os butoes

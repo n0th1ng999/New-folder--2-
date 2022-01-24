@@ -1,3 +1,4 @@
+from ast import arg
 from cgitb import text
 from distutils import command
 from textwrap import fill, wrap
@@ -20,28 +21,33 @@ img = ImageTk.PhotoImage(Image.open(r"imagens//ESMAD//PROJ_ESMAD_LOGO.png"))
 canvas.create_image(250,20, anchor=NW, image=img)
     
 
-def paginaFaculdades1ESMAD():
-        curso1ESMAD.withdraw()
+def paginaFaculdadesESMAD():
+        cursoESMAD.withdraw()
 
 def paginaFaculdades2ESMAD():
         curso2ESMAD.withdraw()
         
 class ScrollBar:
-    def paginaCurso1ESMAD():
-        global curso1ESMAD
+    #ISTO TEM QUE SER MUDADO!!!!!!!!!!!!!!!!!!!
+    def paginaCurso(NomeUni,NomeCurso):
+        global cursoESMAD
 
-        f = open("InfoCursos\\ESMAD\\1.txt")
-        
+
+        f = open("InfoCursos\\"+NomeUni+"\\"+NomeCurso+".txt","r", encoding='utf-8')
+        Textos=[]
+        for l in f:
+            a = l
+            Textos.append(a)
         f.close()
 
+        
 
-
-        curso1ESMAD = Tk()
-        curso1ESMAD.geometry("1980x1600") 
-        curso1ESMAD.state("zoomed")
-        v = Scrollbar(curso1ESMAD)
+        cursoESMAD = Tk()
+        cursoESMAD.geometry("1980x1600") 
+        cursoESMAD.state("zoomed")
+        v = Scrollbar(cursoESMAD)
         v.pack(side = RIGHT,fill = Y)
-        textoCurso1ESMAD = Text(curso1ESMAD, width = 1980,height = 1600,wrap = NONE,relief = FLAT, font = "200",yscrollcommand = v.set)
+        textoCurso1ESMAD = Text(cursoESMAD, width = 1980,height = 1600,wrap = NONE,relief = FLAT, font = "200",yscrollcommand = v.set)
         textoCurso1ESMAD.insert(END,'''\n\n\n\n\n
                     Ano 1\n\n\t\t\t\t\t\t
                     Unidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
@@ -51,24 +57,25 @@ class ScrollBar:
                     Sistemas Computacionais\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t  5   \n\n\n\n\t\t\t\t\t\t
                     Tecnologias Web\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7'''+
                     '''\n\n\n\n
-                         \n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
-                         Conceção e Produção Multimédia\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\t
-                         Interfaces e Design para Aplicações\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                         Matemática II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\t
-                         Programação Orientada a Objetos\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\t
+                        \n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
+                        Conceção e Produção Multimédia\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\t
+                        Interfaces e Design para Aplicações\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
+                        Matemática II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\t
+                        Programação Orientada a Objetos\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\t
                         Projeto I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n
         \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n
                     Ano 2\n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
                     Bases de Dados\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\t
                     Computação Gráfica\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\t
                     Engenharia de Software\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                    Ergonomia Cognitiva e Design de Interação\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\t
+                    Ergonomia Cognitiva e Design de Interação\t\t\t\t\t0\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\t
                     Programação Web I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7\n\n\n\n
-                         \n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
-                         Inteligência Artificial\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\t\t\t\t\t\t
-                         Programação Web II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tProjeto II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                         Testes e Performance Web\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                         Análise de Filmes (opcional)\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n
+                        \n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
+                        Inteligência Artificial\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\t\t\t\t\t\t
+                        Programação Web II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
+                        Projeto II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
+                        Testes e Performance Web\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
+                        Análise de Filmes (opcional)\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n
         \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n            
                     Ano 3\n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
                     Avaliação Psicológica I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\t\t\t\t\t\t
@@ -76,12 +83,23 @@ class ScrollBar:
                     Prática de Investigação I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
                     Psicopatologia I: Criança e Adolescente\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
                     Raciocínio e Tomada de Decisão\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n
-                         \n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAvaliação Psicológica II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tContextos de Aplicação em Psicologia II\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tPrática de Investigação II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tPsicopatologia II: Adulto e Idoso\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tOpção\n\n\n\n\t\t\t\t\t\t\t·Introdução à Cronopsicologia\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t·Modificação do Comportamento\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t·Psicologia da Família e Redes Sociais\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t·Psicologia do Bem-estar Pessoal\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t·Psiconeuroimunologia\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n
+                         \n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
+                         Avaliação Psicológica II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
+                         Contextos de Aplicação em Psicologia II\t\t\t\t\t\t\t
+                         PSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
+                         Prática de Investigação II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
+                         Psicopatologia II: Adulto e Idoso\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
+                         Opção\n\n\n\n\t\t\t\t\t\t\t
+                         ·Introdução à Cronopsicologia\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t
+                         ·Modificação do Comportamento\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t
+                         ·Psicologia da Família e Redes Sociais\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t
+                         ·Psicologia do Bem-estar Pessoal\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t
+                         ·Psiconeuroimunologia\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n
         \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n
                 LEGENDA:\n\t\tCTS = Ciências e Tecnologias da saúde\n\t\tPSIC = Psicologia\n\t\tM = Matemática\n\t\tB = Biologia''')
         textoCurso1ESMAD.pack(side = TOP,fill = X)
         v.config(command=textoCurso1ESMAD.yview)
-        voltarAtras1 = Button(textoCurso1ESMAD,text = "Voltar atrás",font = 20, command = paginaFaculdades1ESMAD)
+        voltarAtras1 = Button(textoCurso1ESMAD,text = "Voltar atrás",font = 20, command = paginaFaculdadesESMAD)
         voltarAtras1.place(x=20,y=20)
 
        
@@ -90,6 +108,7 @@ class ScrollBar:
         textoCurso1ESMAD.config(state = DISABLED)
         
     
+
     def paginaCurso2ESMAD():
         global curso2ESMAD
         curso2ESMAD = Tk()
@@ -128,9 +147,9 @@ class ScrollBar:
         Comment.pack(side = TOP,fill = X)
         
 
-
-    curso1ESMAD = Button(text = "Licenciatura em Tecnologias e Sistemas de Informação Para a Web", relief = "flat" ,font="Helvetica 20 underline", command = paginaCurso1ESMAD )
-    curso1ESMAD.place(x= 20,y= 500)
+#
+    cursoESMAD = Button(text = "Licenciatura em Tecnologias e Sistemas de Informação Para a Web", relief = "flat" ,font="Helvetica 20 underline", command = paginaCurso("ESMAD","1")  )
+    cursoESMAD.place(x= 20,y= 500)
     msgCurso1ESMAD = Message(ESMAD,text = '''A licenciatura assenta numa visão contemporânea e multidisciplinar da Web, agregando competências focadas na conceção, design e desenvolvimento de produtos e software para a Web. Procura dotar os estudantes de conhecimento e competências práticas que lhes permitam o domínio de áreas emergentes como os serviços centrados na cloud, a computação móvel e ubíqua, ou plataformas Web e de negócio eletrónico, sem descurar competências hoje em dia fundamentais, como ergonomia e design de interação, usabilidade e user experience ou prototipagem de plataformas digitais.
 Esta característica de aliar competências relacionadas com o desenvolvimento de produtos a conceitos emergentes relacionados com o design de interfaces (user interface & user experience) é uma característica distintiva desta licenciatura e um dos motivos do seu grande sucesso!
 Esta é ainda uma área de atuação onde a empregabilidade está próxima do pleno emprego. De acordo com estudo realizado em 2019 junto dos diplomados desta licenciatura, a taxa de desemprego foi de 0%, isto é, verificou-se uma situação de pleno emprego!
