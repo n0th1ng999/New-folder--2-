@@ -32,18 +32,18 @@ class ScrollBar:
     def paginaCurso(NomeUni,NomeCurso):
         global cursoESMAD
 
-
+        #isto tem que ser mudado consoante o botao que é pressionado
         f = open("InfoCursos\\"+NomeUni+"\\"+NomeCurso+".txt","r", encoding='utf-8')
         Textos=[]
         for l in f:
-            a = l
-            Textos.append(a)
+            Textos.append(l)
         f.close()
 
         
+        
 
         cursoESMAD = Tk()
-        cursoESMAD.geometry("1980x1600") 
+        cursoESMAD.geometry("1980x2000") 
         cursoESMAD.state("zoomed")
         v = Scrollbar(cursoESMAD)
         v.pack(side = RIGHT,fill = Y)
@@ -147,7 +147,7 @@ class ScrollBar:
         Comment.pack(side = TOP,fill = X)
         
 
-#
+#for 
     cursoESMAD = Button(text = "Licenciatura em Tecnologias e Sistemas de Informação Para a Web", relief = "flat" ,font="Helvetica 20 underline", command = paginaCurso("ESMAD","1")  )
     cursoESMAD.place(x= 20,y= 500)
     msgCurso1ESMAD = Message(ESMAD,text = '''A licenciatura assenta numa visão contemporânea e multidisciplinar da Web, agregando competências focadas na conceção, design e desenvolvimento de produtos e software para a Web. Procura dotar os estudantes de conhecimento e competências práticas que lhes permitam o domínio de áreas emergentes como os serviços centrados na cloud, a computação móvel e ubíqua, ou plataformas Web e de negócio eletrónico, sem descurar competências hoje em dia fundamentais, como ergonomia e design de interação, usabilidade e user experience ou prototipagem de plataformas digitais.
