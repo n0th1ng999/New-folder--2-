@@ -49,54 +49,15 @@ class ScrollBar:
         v.pack(side = RIGHT,fill = Y)
         textoCurso1ESMAD = Text(cursoESMAD, width = 1980,height = 1600,wrap = NONE,relief = FLAT, font = "200",yscrollcommand = v.set)
         textoCurso1ESMAD.insert(END,'''\n\n\n\n\n
-                    Ano 1\n\n\t\t\t\t\t\t
-                    Unidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
-                    Algoritmia e Estruturas de Dados\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\t
-                    Fundamentos de Design\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                    Matemática I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\t
-                    Sistemas Computacionais\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t  5   \n\n\n\n\t\t\t\t\t\t
-                    Tecnologias Web\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7'''+
-                    '''\n\n\n\n
-                        \n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
-                        Conceção e Produção Multimédia\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\t
-                        Interfaces e Design para Aplicações\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                        Matemática II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\t
-                        Programação Orientada a Objetos\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\t
-                        Projeto I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n
+                    Ano 1\n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAlgoritmia e Estruturas de Dados\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\tFundamentos de Design\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tMatemática I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tSistemas Computacionais\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tTecnologias Web\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7'''+'''\n\n\n\n
+                         \n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tConceção e Produção Multimédia\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tInterfaces e Design para Aplicações\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tMatemática II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tProgramação Orientada a Objetos\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\tProjeto I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n
         \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n
-                    Ano 2\n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
-                    Bases de Dados\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\t
-                    Computação Gráfica\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\t
-                    Engenharia de Software\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                    Ergonomia Cognitiva e Design de Interação\t\t\t\t\t0\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\t
-                    Programação Web I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7\n\n\n\n
-                        \n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
-                        Inteligência Artificial\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\t\t\t\t\t\t
-                        Programação Web II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                        Projeto II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                        Testes e Performance Web\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                        Análise de Filmes (opcional)\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n
+                    Ano 2\n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tBases de Dados\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tComputação Gráfica\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\tEngenharia de Software\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tErgonomia Cognitiva e Design de Interação\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tProgramação Web I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7\n\n\n\n
+                         \n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tInteligência Artificial\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\t\t\t\t\t\tProgramação Web II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\tProjeto II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tTestes e Performance Web\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tVídeo I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n
         \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n            
-                    Ano 3\n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
-                    Avaliação Psicológica I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\t\t\t\t\t\t
-                    Contextos de Aplicação em Psicologia I\t\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                    Prática de Investigação I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                    Psicopatologia I: Criança e Adolescente\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                    Raciocínio e Tomada de Decisão\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n
-                         \n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
-                         Avaliação Psicológica II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                         Contextos de Aplicação em Psicologia II\t\t\t\t\t\t\t
-                         PSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                         Prática de Investigação II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                         Psicopatologia II: Adulto e Idoso\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                         Opção\n\n\n\n\t\t\t\t\t\t\t
-                         ·Introdução à Cronopsicologia\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t
-                         ·Modificação do Comportamento\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t
-                         ·Psicologia da Família e Redes Sociais\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t
-                         ·Psicologia do Bem-estar Pessoal\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t
-                         ·Psiconeuroimunologia\t\t\t\t\t\tPSIC\t\t\t\t\t\t\t6\n\n\n\n
-        \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n
-                LEGENDA:\n\t\tCTS = Ciências e Tecnologias da saúde\n\t\tPSIC = Psicologia\n\t\tM = Matemática\n\t\tB = Biologia''')
+                    Ano 3\n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tComputação Móvel e Ubíqua\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\t\t\t\t\t\tInovação e Empreendedorismo\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tNegócio Eletrónico e Segurança\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tPrototipagem Avançada em Plataformas Digitais\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tServiços e Interfaces para a Cloud\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t7\n\n\n\n
+                         \n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tMarketing Digital\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t3\n\n\n\n\t\t\t\t\t\tProjeto Final/Estágio\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t23\n\n\n\n\t\t\t\t\t\tUsabilidade e User Experience\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t4\n\n\n\n\t\t\t\t\t\t
+        \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n''')
         textoCurso1ESMAD.pack(side = TOP,fill = X)
         v.config(command=textoCurso1ESMAD.yview)
         voltarAtras1 = Button(textoCurso1ESMAD,text = "Voltar atrás",font = 20, command = paginaFaculdadesESMAD)
@@ -118,23 +79,15 @@ class ScrollBar:
         v.pack(side = RIGHT,fill = Y)
         texoCurso2ESMAD = Text(curso2ESMAD, width = 1980, height = 1600,wrap = NONE,relief = FLAT,font = "200",yscrollcommand = v.set)
         texoCurso2ESMAD.insert(END,'''\n\n\n\n\n
-                    Ano 1\n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tEconomia I\t\t\t\t\t\t\tE\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tGestão de Empresas\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tCálculo I\t\t\t\t\t\t\tM\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tGestão da Informação\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tDireito das Empresas I\t\t\t\t\t\t\tCJ\t\t\t\t\t\t\t6\n\n\n\n
-                         \n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tEconomia II\t\t\t\t\t\t\tE\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tComportamento Organizacional\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tCálculo II\t\t\t\t\t\t\tM\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tTeoria da Contabilidade\t\t\t\t\t\t\tC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tTeoria das Organizações\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n
+                    Ano 1\n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAnimação I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tFotografia I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tInformática Aplicada\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tSemiótica I\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t3\n\n\n\n\t\t\t\t\t\tTecnologias Multimédia\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tTeoria da Comunicação Multimédia\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t3'''+'''\n\n\n\n
+                         \n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tDesign da Comunicação I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t4\n\n\n\n\t\t\t\t\t\tLaboratório I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\tProgramação I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\tSemiótica II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t3\n\n\n\n\t\t\t\t\t\tSom I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tVideo I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t5\n\n\n\n
         \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n
-                    Ano 2\n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tContabilidade e Informação Financeira\t\t\t\t\t\t\tC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tGestão de Recursos Humanos\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tIntrodução Ao Marketing\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tDireito de Empresas II\t\t\t\t\t\t\tCJ\t\t\t\t\t\t\t6Gestão Financeira I\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n
-                         \n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tInvestigação Operacional\t\t\t\t\t\t\tEGI\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tGestão de Marketing\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tMétodos Quantitativos em Gestão\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tContabilidade Analítica\t\t\t\t\t\t\tC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tTecnologia e Sistemas de Informação em Gestão\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n
-        \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n
-                    Ano 3\n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
-                    Gestão de Operações\t\t\t\t\t\t\t
-                    EGI\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                    Empreendedorismo\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                    Gestão Integrada de Projectos\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                    Auditoria\t\t\t\t\t\t\tC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t
-                    Gestão Financeira II\t\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n
-                         \n\n\t\t\t\t\t\tUnidade curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\t
-                         Logística\t\t\t\t\t\t\tEGI\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tControlo de Gestão\t\t\t\t\t\t\tC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tFiscalidade\t\t\t\t\t\t\tC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tGestão da Qualidade\t\t\t\t\t\t\tEGI\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tOpção\n\n\n\n\t\t\t\t\t\t\t·Contabilidade Analitica Avançada\t\t\t\t\t\tC\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t.Gestão de Serviços\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t.Gestão Estratégica\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\t\t.Novas Formas de Negócio\t\t\t\t\t\tGES\t\t\t\t\t\t\t6\n\n\n\n
-        \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n
-                LEGENDA:\n\t\t E = Economia\n\t\tGES = Gestão\n\t\tM = Matemática\n\t\tCJ = Ciências Jurídicas\n\t\tC = Contabilidade''')
+                    Ano 2\n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tCultura Digital\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t3\n\n\n\n\t\t\t\t\t\tDesign da Comunicação II\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t4\n\n\n\n\t\t\t\t\t\tDesign de Interfaces\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t4\n\n\n\n\t\t\t\t\t\tFotografia II\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tProgramação II\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tSom II\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n\t\t\t\t\t\tVideo II\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t5\n\n\n\n
+                         \n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAnimação II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\t\t\t\t\t\tArte e Cultura Contemporânea\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t3\n\n\n\n\t\t\t\t\t\tLaboratório II\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t7\n\n\n\n\t\t\t\t\t\tMultimédia I\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n\t\t\t\t\t\tProgramação III\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t6\n\n\n\n
+        \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n            
+                    Ano 3\n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tAnimação III\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t8\n\n\n\t\t\t\t\t\tLaboratório III\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t9\n\n\n\n\t\t\t\t\t\tMultimédia II\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t9\n\n\n\n\t\t\t\t\t\tPós-Produção\t\t\t\t\t\t\t1º Semestre\t\t\t\t\t\t\t8\n\n\n\n
+                         \n\n\t\t\t\t\t\tUnidade Curricular\t\t\t\t\t\t\tPeríodo\t\t\t\t\t\t\tCréditos ECTS\n\n\n\n\t\t\t\t\t\tLegislação e Autoria\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t2\n\n\n\n\t\t\t\t\t\tMarketing e Gestão de Projectos\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t2\n\n\n\n\t\t\t\t\t\tProjecto\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t20\n\n\n\n\t\t\t\t\t\tSeminário\t\t\t\t\t\t\t2º Semestre\t\t\t\t\t\t\t2\n\n\n\n\t\t\t\t\t\t
+        \t\t\t\t\t\tTotal\t\t\t\t\t\t\t\t\t\t\t\t\t\t60\n\n\n\n''')
 
         texoCurso2ESMAD.pack(side = TOP,fill = X)
         v.config(command= texoCurso2ESMAD.yview)
