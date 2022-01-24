@@ -38,7 +38,6 @@ class ScrollBar:
         for l in f:
             Textos.append(l)
         f.close()
-
         
         
 
