@@ -18,7 +18,7 @@ ESMAD.state("zoomed")
 canvas = Canvas(ESMAD, width = 1600, height = 1600)  
 canvas.pack()  
 img = ImageTk.PhotoImage(Image.open(r"imagens//ESMAD//PROJ_ESMAD_LOGO.png")) 
-canvas.create_image(250,20, anchor=NW, image=img)
+canvas.create_image(480,20, anchor=NW, image=img)
     
 
 def paginaFaculdadesESMAD():
@@ -159,11 +159,11 @@ O curso privilegia ainda uma vertente eminentemente prática, como o demonstram 
     
 
 
-    curso2ESMAD = Button(text = "Licenciatura em Multimédia", relief = "flat",font = (20), command = paginaCurso2ESMAD )
-    curso2ESMAD.place(x = 20, y = 650)
+    curso2ESMAD = Button(text = "Licenciatura em Multimédia", relief = "flat",font="Helvetica 20 underline", command = paginaCurso2ESMAD )
+    curso2ESMAD.place(x = 20, y = 660)
     msgcurso2 = Message(ESMAD,text = '''A Licenciatura em Multimédia assenta numa visão contemporânea e interdisciplinar. Fundindo várias áreas numa interseção que incluí arte, tecnologia, comunicação e cultura, bem como a música, o teatro, o cinema e o audiovisual, numa plataforma de comunicação diferenciadora e inovadora, capaz de produzir, veicular e transmitir conteúdos a partir de diferentes aplicações, plataformas e suportes. Orienta-se numa dimensão artística, criativa e de inovação tecnológica e persegue uma filosofia de conhecimento transversal, promovida pelas várias disciplinas que compõem o curso.
 ''',width = 1500)
-    msgcurso2.place(x = 20, y = 680)
+    msgcurso2.place(x = 20, y = 710)
 
 
 

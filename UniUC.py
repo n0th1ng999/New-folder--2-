@@ -13,8 +13,8 @@ UC = Tk()
 UC.geometry("1920x1080")
 canvas = Canvas(UC,width = 1600,height = 1600)
 canvas.pack()
-img = ImageTk.PhotoImage(Image.open(r"C:\Users\Silgueira\Desktop\AED Tema B\Imagens\PROJ_UC_LOGO.png"))
-canvas.create_image(250,20, anchor = NW,image=img)
+img = ImageTk.PhotoImage(Image.open(r"imagens//UC//PROJ_UC_LOGO.png"))
+canvas.create_image(480,20, anchor=NW, image=img)
 
 def paginaFaculdades1UC():
     curso1UC.withdraw()
@@ -64,15 +64,15 @@ class ScrollBar:
 
 
 
-    curso1UC = Button(text = "Licenciantura em Engenharia Civil",relief = "flat",font = 20,command = paginaCurso1UC)
-    curso1UC.place(x = 20,y = 520)
+    curso1UC = Button(text = "Licenciantura em Engenharia Civil",relief = "flat",font="Helvetica 20 underline",command = paginaCurso1UC)
+    curso1UC.place(x = 20,y = 500)
     msgCurso1UC = Message(UC,text = '''O objetivo geral principal do ciclo de estudos é dar formação básica, mas fundamentada, nos diversos domínios da Engenharia Civil, proporcionando aos estudantes uma formação sólida em áreas estruturantes, tais como matemática, química, física e computação, para além de dar formação básica em áreas específicas da engenharia civil relacionadas com diversas intervenções no território destinadas a preencher as necessidades da sociedade.
 Complementarmente, pretende-se encorajar os estudantes a valorizar algumas competências e atitudes pessoais necessárias ao exercício da profissão, nomeadamente o espírito científico, a criatividade, o sentido crítico e de responsabilidade, a capacidade de aprender autonomamente, a capacidade para interagir e trabalhar em grupo e em equipas interdisciplinares, a capacidade de auto adaptação, a capacidade de comunicação e de liderança, a ética profissional, a autoexigência, o ecumenismo cultural, a valorização do conhecimento, bem como fomentar o empreendedorismo e a criação de empresas inovadoras apoiadas em investigação científica.''',width = 1500)
     msgCurso1UC.place(x = 20,y = 550)
 
 
-    curso2UC = Button(text = "Licenciantura em Engenharia Mecânica", relief = "flat",font = 20,command = paginaCurso2UC)
-    curso2UC.place(x = 20,y = 670)
+    curso2UC = Button(text = "Licenciantura em Engenharia Mecânica", relief = "flat",font="Helvetica 20 underline",command = paginaCurso2UC)
+    curso2UC.place(x = 20,y = 650)
     msgCurso2UC = Message(UC,text = '''A formação académica do Engenheiro Mecânico, na Universidade de Coimbra, visa prepará-lo para o projeto de máquinas e processos; para a conceção e a fabricação de peças e máquinas em geral; para ações de desenvolvimento na área energética e ambiental; para a gestão da produção; para manutenção de equipamentos e também para atuarem como empreendedores nas áreas industriais afins. A formação ao nível do primeiro ciclo confere formação nos vários domínios da engenharia mecânica proporcionando uma base sólida para a prossecução de estudos bem como uma habilitação inicial para a integração no mercado de trabalho.''',width = 1500)
     msgCurso2UC.place(x = 20,y = 700)
 
