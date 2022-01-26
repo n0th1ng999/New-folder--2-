@@ -8,6 +8,7 @@ import re
 import os
 
 
+
 global admin
 def register_user():
     usernameInfo = username.get()
@@ -33,7 +34,10 @@ def register_user():
     emailEntry.delete(0,END)
     nicknameEntry.delete(0,END)
     Label(screen1,text = "Registration Sucess").pack()
-
+    screen.withdraw()
+    screen1.withdraw()
+    os.system('python '+'PageUni'+'.py')
+    
 
 def validateReg():
     while True:
@@ -133,6 +137,7 @@ def login():
 
 def loginSuccess():
     messagebox.showinfo("Login was successfull!", "your credentials are correct!")
+    os.system('python '+'PageUni'+'.py')
 
 #def loginSuccess():
 #    message = tk.Tk()
@@ -175,40 +180,17 @@ def loginValidation():
         Fields = user.split(";")
         if username1 == Fields[0]:
             if password1 == Fields[1]:
+                
+                screen.withdraw()
+                screen2.withdraw()
                 loginSuccess()
                 if username1 == "jose" and password1 == "nogueira":
                     admin = True
-                    print("Welcome Admin")
-                Main = Toplevel()
+                    #Passar esta variavel ou Passar a conta em si 
 
-#Get the current screen width and height
-                screen_width = Main.winfo_screenwidth()
-                screen_height = Main.winfo_screenheight()
+                    
+                    
 
-#
-                greeting = tk.Label(text="Hello, Tkinter")
-                greeting.pack()
-
-# setting attribute
-                Main.attributes('-fullscreen', True)
-                Main.resizable(False, False)
-                Main.title("")
-
-
-                Focus = tk.LabelFrame(Main, text='' , width= screen_width-200 , height = screen_height-200  , bg = '#fff' ,  borderwidth= 0, highlightcolor='#f43', highlightthickness= 0)
-                Focus.place(x = 200 , y = 200 )
-
-                SideNav = tk.LabelFrame(Main, text='' , width= 300 , height = screen_height-200  , bg = '#023' ,  borderwidth= 0, highlightcolor='#f43', highlightthickness= 0)
-                SideNav.place(x = 0 , y = 200 )
-                Navbar = tk.LabelFrame(Main, text='' , width= screen_width , height = 200  , bg='#f23',  borderwidth= 0 ,highlightcolor='#f23', highlightthickness= 0  )
-                Navbar.place(x = 0 , y= 0)
-
-
-
-
-
-                Main.mainloop()
-                
                 return
             else:
                 invalidPassword()
