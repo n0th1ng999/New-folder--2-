@@ -24,7 +24,6 @@ paginaBlah = Tk()
 
 pageUni = r"infoProjects"
 
-pageUni = r"infoCursos"
 
 for base, dirs, files in os.walk(pageUni):
     for directories in dirs:
