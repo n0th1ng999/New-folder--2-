@@ -2,6 +2,7 @@ import os
 from posixpath import split
 from tkinter.simpledialog import SimpleDialog
 from tkinter import *
+from turtle import bgcolor
 from PIL import ImageTk,Image
 
 
@@ -209,22 +210,31 @@ def PAGE_ONCLICK(CursoFile):
     User=[]
     text=[]
     
-
+    textoCurso1ESMAD.insert(END,'''\n\t\t\t--Comentarios--\n\n\t\t\t''')
     
 
-    file = open("Comments.txt","r","Utf-8")
+    file = open("Comments.txt","r",encoding="Utf-8")
     
     for l in file:
         Comentario=l.split(";")
-        curso.append(Comentario[0])
-        User.append(Comentario[1])
-        text.append(Comentario[2])
-    
-   
-    
+        print(Comentario[0])
+        print(content_list[0])
+        if Comentario[0] == content_list[0]:
+            print(Comentario[0])
+            print(content_list[0])
+            textoCurso1ESMAD.insert(END,'''\n\n\t\t\tComentario de '''+Comentario[1]+'''\n\n\t\t\t'''+Comentario[2])
+            
     file.close()
+    
 
-
+    frameComentarios2UA = Frame(my_canvas,width=1080,height=5,relief = "sunken")
+    frameComentarios2UA.pack(side = BOTTOM)
+    frameComentarios2UA.config(background='white') 
+    
+    comentarios = Text(frameComentarios2UA,wrap = NONE, height=3)
+    comentarios.pack()
+    Sendbutton = Button(frameComentarios2UA, text="EnviarComentario" )
+    Sendbutton.pack()
 
     root.mainloop()
 
@@ -250,9 +260,6 @@ for base, dirs, files in os.walk(pageUni):
         Faculdades = Button(paginaBlah,text = naoSei, relief = "flat",font = 20,command = lambda naoSei=naoSei: callback(naoSei))
         Faculdades.pack()
         print(dirs[totalDir-1])
-        
-       
-
 
 #ASSINGS THE NAME OF THE UNI
 paginaBlah.mainloop()

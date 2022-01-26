@@ -183,10 +183,18 @@ def loginValidation():
                 
                 screen.withdraw()
                 screen2.withdraw()
-                loginSuccess()
+                f=open("Logged.txt","w",encoding="utf-8")
+                #SETS WHO IS LOGGED;LOGGEDSTATE;ADMINSTATE
+                f.write(Fields[0]+";TRUE"+";FALSE")
+                f.close()
                 if username1 == "jose" and password1 == "nogueira":
-                    admin = True
+                    f=open("Logged.txt","w",encoding="utf-8")
+                    #SETS WHO IS LOGGED;LOGGEDSTATE;ADMINSTATE
+                    f.write(Fields[0]+";TRUE"+";TRUE")
+                    f.close()
                     #Passar esta variavel ou Passar a conta em si 
+                loginSuccess()
+        
 
                     
                     
@@ -225,20 +233,12 @@ def login():
     Button(screen2, text = "Login", width = 10, height = 1,command = loginValidation).pack()
 
 
-    
-    
-    
-
-
-
-
-
 def main_screen():
     global screen
     screen = Tk()
     screen.geometry("300x250")
-    screen.title("Notes 1.0")
-    Label(text = "Notes 1.0", bg = "grey",width = "300",height = "2", font = ("calibri",13)).pack()
+    screen.title("Gestor Cursos")
+    Label(text = "Gestor Cursos", bg = "grey",width = "300",height = "2", font = ("calibri",13)).pack()
     Label(text="").pack()
     Button(text = "Login",height = "2",width = "30",command = login).pack()
     Label(text="").pack()

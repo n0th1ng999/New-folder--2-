@@ -17,7 +17,7 @@ class AED_Main():
         self.file_to_open = self.data_folder + self.curso +".txt"
 
         #Opening Files
-        self.f = open(self.file_to_open)
+        self.f = open(self.file_to_open,encoding="utf-8")
         self.Textos=[]
         
         
