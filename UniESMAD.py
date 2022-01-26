@@ -11,8 +11,6 @@ from tkinter import ttk
 
 
 
-
-
 ESMAD = Tk()
 ESMAD.geometry("1920x1080")   
 ESMAD.state("zoomed")
@@ -20,7 +18,7 @@ canvas = Canvas(ESMAD, width = 1600, height = 1600)
 canvas.pack()  
 img = ImageTk.PhotoImage(Image.open(r"imagens//ESMAD//PROJ_ESMAD_LOGO.png")) 
 canvas.create_image(480,20, anchor=NW, image=img)
-    
+
 
 def paginaFaculdadesESMAD():
         cursoESMAD.withdraw()
@@ -131,6 +129,7 @@ class ScrollBar:
         Comment = Frame(curso2ESMAD, width = 1980, height = 300,text="ola")
         Comment.pack(side = TOP,fill = X)
         
+    
 
 #for 
     cursoESMAD = Button(text = "Licenciatura em Tecnologias e Sistemas de Informação Para a Web", relief = "flat" ,font="Helvetica 20 underline", command = paginaCurso("ESMAD","1")  )
@@ -150,21 +149,6 @@ O curso privilegia ainda uma vertente eminentemente prática, como o demonstram 
 ''',width = 1500)
     msgcurso2.place(x = 20, y = 710)
 
-
-
-
-    
 s = ScrollBar()
-
-
-   
-
-
-
-        
-
-
-
-
 ESMAD.mainloop()
 s = ScrollBar()
