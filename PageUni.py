@@ -254,14 +254,26 @@ def callback(name):
 
 totalDir = 0
 paginaBlah = Tk()
+paginaBlah.geometry("1920x1080")
+screen_width = paginaBlah.winfo_screenwidth()
+screen_height = paginaBlah.winfo_screenheight()
+Focus = LabelFrame(paginaBlah, text='' , width= screen_width-200 , height = screen_height-200  , bg = '#fff' ,  borderwidth= 0, highlightcolor='#f43', highlightthickness= 0)
+Focus.place(x = 200 , y = 120 )
+
+SideNav = LabelFrame(paginaBlah, text='' , width= 200 , height = screen_height-200  , bg = '#023' ,  borderwidth= 0, highlightcolor='#f43', highlightthickness= 0)
+SideNav.place(x = 0 , y = 120 )
+Navbar = LabelFrame(paginaBlah, text='' , width= screen_width , height = 130  , bg='#f23',  borderwidth= 0 ,highlightcolor='#f23', highlightthickness= 0  )
+Navbar.place(x = 0 , y= 0)
+paginaBlah.wm_attributes('-transparentcolor','grey')
+
 pageUni = r"infoCursos"
 for base, dirs, files in os.walk(pageUni):
     for directories in dirs:
         totalDir += 1
         naoSei = dirs[totalDir-1]
-        Faculdades = Button(paginaBlah,text = naoSei, relief = "flat",font = 20,command = lambda naoSei=naoSei: callback(naoSei))
-        Faculdades.pack()
+        Faculdades = Button(text = naoSei, relief = "flat",font = 20,command = lambda naoSei=naoSei: callback(naoSei))
+        Faculdades.pack(SideNav, fill=BOTH , expand=1 , anchor = W , pady = 50, padx=70)
         print(dirs[totalDir-1])
 
-#ASSINGS THE NAME OF THE UNI
+#ASSIGNS THE NAME OF THE UNI
 paginaBlah.mainloop()

@@ -93,7 +93,7 @@ class AED_Main():
     def Esquerda(self,a):
         
 
-        if( self.i > 0):
+        if( self.i > 2):
             self.i-=1
 
             self.NomeCurso.delete("1.0","end")
