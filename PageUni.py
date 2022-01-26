@@ -4,7 +4,6 @@ from tkinter.simpledialog import SimpleDialog
 from tkinter import *
 from turtle import bgcolor
 from PIL import ImageTk,Image
-import tkinter as tk
 
 
 def UniPage(nomeUni,nomesCursos):
@@ -254,29 +253,15 @@ def callback(name):
     
 
 totalDir = 0
-paginaMain = Tk()
-paginaMain.geometry("1920x1080")
-
-
-pageUni = r"infoProjects"
-screen_width = paginaMain.winfo_screenwidth()
-screen_height = paginaMain.winfo_screenheight()
-Focus = tk.LabelFrame(paginaMain, text='' , width= screen_width-200 , height = screen_height-200  , bg = '#fff' ,  borderwidth= 0, highlightcolor='#f43', highlightthickness= 0)
-Focus.place(x = 200 , y = 120 )
-
-SideNav = tk.LabelFrame(paginaMain, text='' , width= 200 , height = screen_height-200  , bg = '#023' ,  borderwidth= 0, highlightcolor='#f43', highlightthickness= 0)
-SideNav.place(x = 0 , y = 120 )
-Navbar = tk.LabelFrame(paginaMain, text='' , width= screen_width , height = 130  , bg='#f23',  borderwidth= 0 ,highlightcolor='#f23', highlightthickness= 0  )
-Navbar.place(x = 0 , y= 0)
-paginaMain.wm_attributes('-transparentcolor','grey')
+paginaBlah = Tk()
+pageUni = r"infoCursos"
 for base, dirs, files in os.walk(pageUni):
     for directories in dirs:
         totalDir += 1
-        result = dirs[totalDir-1]
-        Faculdades = Button(paginaMain,text = result, relief = "flat",font = 20,command = lambda result=result: callback(result))
-        Faculdades.pack(anchor = NW,pady = 150)
+        naoSei = dirs[totalDir-1]
+        Faculdades = Button(paginaBlah,text = naoSei, relief = "flat",font = 20,command = lambda naoSei=naoSei: callback(naoSei))
+        Faculdades.pack()
         print(dirs[totalDir-1])
 
 #ASSINGS THE NAME OF THE UNI
-paginaMain.mainloop()
-
+paginaBlah.mainloop()
