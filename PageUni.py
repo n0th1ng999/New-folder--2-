@@ -266,14 +266,14 @@ Navbar = LabelFrame(paginaBlah, text='' , width= screen_width , height = 130  , 
 Navbar.place(x = 0 , y= 0)
 paginaBlah.wm_attributes('-transparentcolor','grey')
 
-pageUni = r"infoCursos"
+pageUni = r"InfoCursos"
 for base, dirs, files in os.walk(pageUni):
     for directories in dirs:
         totalDir += 1
         naoSei = dirs[totalDir-1]
-        Faculdades = Button(text = naoSei, relief = "flat",font = 20,command = lambda naoSei=naoSei: callback(naoSei))
-        Faculdades.pack(SideNav, fill=BOTH , expand=1 , anchor = W , pady = 50, padx=70)
-        print(dirs[totalDir-1])
+        Faculdades = Button(SideNav, text = naoSei, relief = "flat",font = "20",command = lambda naoSei=naoSei: callback(naoSei))
+        Faculdades.pack( fill=BOTH , expand=1 , anchor = W , pady = 50, padx=70)
+        
 
 #ASSIGNS THE NAME OF THE UNI
 paginaBlah.mainloop()
